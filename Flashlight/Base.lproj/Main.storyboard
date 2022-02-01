@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Flashlight View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="FlashlightViewController" customModule="Flashlight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SwA-X8-XjH">
+                                <rect key="frame" x="173.5" y="350.5" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="D6w-fR-gHD"/>
+                                    <constraint firstAttribute="height" constant="67" id="wsP-AL-U5I"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="flashlight_off">
+                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapFlashlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5eD-xn-yaW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1eH-2y-Y1h" userLabel="Hello Button">
+                                <rect key="frame" x="173.5" y="478.5" width="67" height="67"/>
+                                <color key="backgroundColor" systemColor="systemFillColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="L2f-Up-b1g"/>
+                                    <constraint firstAttribute="height" constant="67" id="O5j-9G-8RM"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                                <state key="normal" image="screenlight_on"/>
+                                <connections>
+                                    <action selector="didTapScreenlightButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uqv-Ny-cw2"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ZDA-pL-n4r">
+                                <rect key="frame" x="85" y="800" width="244" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="78u-yE-3OR"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="didSlideBrightnessSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="uKf-Ws-tMB"/>
+                                </connections>
+                            </slider>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZDA-pL-n4r" secondAttribute="bottom" constant="32" id="N5E-25-awY"/>
+                            <constraint firstItem="SwA-X8-XjH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-64" id="UCf-hv-FWd"/>
+                            <constraint firstItem="1eH-2y-Y1h" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XmV-i4-nfG"/>
+                            <constraint firstItem="ZDA-pL-n4r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="h9g-jt-LVg"/>
+                            <constraint firstItem="1eH-2y-Y1h" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="64" id="oQb-UZ-bNx"/>
+                            <constraint firstItem="SwA-X8-XjH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qDG-HW-Qub"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="brightnessSlider" destination="ZDA-pL-n4r" id="VbJ-pa-z2u"/>
+                        <outlet property="flashlightButton" destination="SwA-X8-XjH" id="JmK-wx-KkZ"/>
+                        <outlet property="screenlightButton" destination="1eH-2y-Y1h" id="yob-Ih-7Pk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="96"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="flashlight_off" width="100" height="100"/>
+        <image name="screenlight_on" width="100" height="100"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemFillColor">
+            <color red="0.47058823529411764" green="0.47058823529411764" blue="0.50196078431372548" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
